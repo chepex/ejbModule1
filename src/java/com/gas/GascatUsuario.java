@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "GascatUsuario.findByCodigoEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.codigoEstacion = :codigoEstacion and g.gascatUsuarioPK.codigoEmpresa = :codigoEmpresa "),
     @NamedQuery(name = "GascatUsuario.findByUsername", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username"),
     @NamedQuery(name = "GascatUsuario.findByLogin", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.pwd = :pass"),
+    @NamedQuery(name = "GascatUsuario.findByUsuarioEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.gasEstacion = :gasEstacion and g.estado = 'A' "),
     @NamedQuery(name = "GascatUsuario.findByLoginEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.pwd = :pass and g.gasEstacion = :gasEstacion and g.estado = 'A' "),
     @NamedQuery(name = "GascatUsuario.findByLoginEstacionIslero", query = "SELECT g FROM GascatUsuario g WHERE g.codigoIslero = :usuario and g.pwd = :pass and g.gasEstacion = :gasEstacion and g.estado = 'A' "),    
     @NamedQuery(name = "GascatUsuario.findByToken", query = "SELECT g FROM GascatUsuario g WHERE g.token = :token"),    
@@ -77,6 +78,10 @@ public class GascatUsuario implements Serializable {
     private BigInteger codigoIslero;
     @Column(name = "CONECTADO")
     private boolean conectado;    
+    @Column(name = "TELEFONO")
+    private String telefono;        
+    @Column(name = "CORREO")
+    private String correo;    
     @Column(name = "PWD")
     private String pwd;
     @JoinColumns({
@@ -90,6 +95,25 @@ public class GascatUsuario implements Serializable {
 
     public GascatUsuario() {
     }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
+    
+    
 
     public String getToken() {
         return token;

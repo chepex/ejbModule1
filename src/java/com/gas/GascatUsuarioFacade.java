@@ -59,7 +59,16 @@ public class GascatUsuarioFacade extends AbstractFacade<GascatUsuario> {
         .setParameter("gasEstacion",gasEstacion);
               
         return q.getResultList();
-    }     
+    }    
+    
+    public List<GascatUsuario> findByUsuarioEstacion(String usuario, GasEstacion gasEstacion) {
+        TypedQuery<GascatUsuario> q = null;     
+        q = em.createNamedQuery("GascatUsuario.findByUsuarioEstacion",GascatUsuario.class)                        
+           .setParameter("username",usuario)          
+        .setParameter("gasEstacion",gasEstacion);
+              
+        return q.getResultList();
+    }      
     
     public List<GascatUsuario> findByLoginEstacionIslero(BigInteger usuario, String pass , GasEstacion gasEstacion) {
         TypedQuery<GascatUsuario> q = null;     

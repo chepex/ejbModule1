@@ -10,6 +10,7 @@ import com.gas.GasEstacion;
 import com.gas.GasPrepago;
 import com.gas.GasPrepagoDetalle;
 import com.gas.GasPrepagoDetallePK;
+import com.gas.GasSaborCombustible;
 import com.gas.PrepagoControlConsumo;
 import com.gas.PrepagoControlConsumoFacade;
 import com.gas.PrepagoDetalle;
@@ -114,7 +115,7 @@ public class gasPrepago {
     }
     
     
-    public String generarPrepagoEspecial(GasPrepago gasPrepago, List<PrepagoDetalle> ld){
+    public String generarPrepagoEspecial(GasPrepago gasPrepago, List<PrepagoDetalle> ld ){
         String msg ="";
       
         List<GasPrepagoDetalle> gasPrepagoDetalleList = new ArrayList<GasPrepagoDetalle>();
@@ -142,6 +143,8 @@ public class gasPrepago {
                 gpd.setValorPrepago(p.getValor());
                 gpd.setEstado("P");
                 gpd.setImpreso("N");
+                gpd.setIdSabor(p.getIdSabor());
+                
                 gasPrepagoDetalleList.add(gpd);
                 // gasPrepagoDetalleFacade.edit(gpd);
                 //gasPrepagoDetalleList.add(gpd);
@@ -167,7 +170,7 @@ public class gasPrepago {
     
   
   
-    public String generarPrepago(GasPrepago gasPrepago){
+    public String generarPrepago(GasPrepago gasPrepago ,GasSaborCombustible gc ){
         String msg ="";
         System.out.println("QUI1");
         List<GasPrepagoDetalle> gasPrepagoDetalleList = new ArrayList<GasPrepagoDetalle>();
@@ -188,6 +191,7 @@ public class gasPrepago {
                     gpd.setValorPrepago(gasPrepago.getValorDePrepago());
                     gpd.setEstado("P");
                     gpd.setImpreso("N");
+                    gpd.setIdSabor(gc);
                    // gasPrepago.getGasPrepagoDetalleList().add(gpd);
                     gasPrepagoDetalleList.add(gpd);
                     //gasPrepagoDetalleFacade.edit(gpd);

@@ -141,6 +141,7 @@ public class GasPrepago implements Serializable {
         @JoinColumn(name = "CODIGO_CLIENTE", referencedColumnName = "CODIGO_CLIENTE", insertable = false, updatable = false)})
     @ManyToOne(optional = false)
     private GasCliente gasCliente;    
+  
     @JoinColumns({
         @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID_CLIENTE", insertable = false, updatable = false) })
     @ManyToOne(optional = false)

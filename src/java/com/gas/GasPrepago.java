@@ -36,6 +36,8 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "GasPrepago.findAll", query = "SELECT g FROM GasPrepago g"),
+    
+    @NamedQuery(name = "GasPrepago.findByPendiente", query = "SELECT g FROM GasPrepago g WHERE g.estado = 'A' and g.autorizacion = null "),    
     @NamedQuery(name = "GasPrepago.findByCodigoEmpresa", query = "SELECT g FROM GasPrepago g WHERE g.gasPrepagoPK.codigoEmpresa = :codigoEmpresa"),
     @NamedQuery(name = "GasPrepago.findByCodigoEstacion", query = "SELECT g FROM GasPrepago g WHERE g.gasPrepagoPK.codigoEstacion = :codigoEstacion"),
     @NamedQuery(name = "GasPrepago.findByCliente", query = "SELECT g FROM GasPrepago g WHERE g.cliente = :cliente order by g.gasPrepagoPK.codigoPrepago desc "),
@@ -101,7 +103,9 @@ public class GasPrepago implements Serializable {
     @Column(name = "ESTADO")    
     private String estado;
     @Column(name = "AUTORIZACION")    
-    private String autorizacion;    
+    private String autorizacion;   
+    @Column(name = "IMPRESO")    
+    private String impreso;        
     @Column(name = "NUM_FACTURA")    
     private String numFactura;       
     @Column(name = "FECHA_INICIO")
@@ -155,6 +159,16 @@ public class GasPrepago implements Serializable {
     public GasPrepago() {
     }
 
+    public String getImpreso() {
+        return impreso;
+    }
+
+    public void setImpreso(String impreso) {
+        this.impreso = impreso;
+    }
+
+    
+    
     public String getCodigoBanco() {
         return codigoBanco;
     }

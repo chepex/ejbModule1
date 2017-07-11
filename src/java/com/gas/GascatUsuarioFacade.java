@@ -99,6 +99,16 @@ public class GascatUsuarioFacade extends AbstractFacade<GascatUsuario> {
         return q.getResultList();
     }     
     
+    public List<GascatUsuario> findByRol(String rol) {
+        TypedQuery<GascatUsuario> q = null;
+     
+        q = em.createNamedQuery("GascatUsuario.findByRol",GascatUsuario.class)                        
+           .setParameter("rol",rol);
+           
+              
+        return q.getResultList();
+    }         
+    
     
    
     

@@ -92,7 +92,7 @@ public class EmailBeanGmail {
 "            text-align: center;\n" +
 "            text-decoration: none;\n" +
 "            display: inline-block;\n" +
-"            font-size: 16px;\" href = \"http://192.168.160.27:8080/tag/\">Autorizar </a>\n" +
+"            font-size: 16px;\" href = \"http://190.86.234.65:8080/prepago/\">Autorizar </a>\n" +
 "        </td>\n" +
 "    </tr>\n" +
 " </table>\n" +

@@ -118,5 +118,18 @@ public class GasPrepagoFacade extends AbstractFacade<GasPrepago> {
         }
         return q.getResultList();
     }      
+
+
+    public List<GasPrepago> findByPendiente(  ) {
+         TypedQuery<GasPrepago> q = null;
+        try{        
+            q = em.createNamedQuery("GasPrepago.findByPendiente",GasPrepago.class)   ;                 
+             
+            q.getResultList();            
+        }catch(Exception ex){
+            System.out.println("erorr--->"+ex);
+        }
+        return q.getResultList();
+    }      
     
 }

@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "GascatUsuario.findByCodigoEmpresa", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.codigoEmpresa = :codigoEmpresa"),
     @NamedQuery(name = "GascatUsuario.findByCodigoEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.codigoEstacion = :codigoEstacion and g.gascatUsuarioPK.codigoEmpresa = :codigoEmpresa "),
     @NamedQuery(name = "GascatUsuario.findByUsername", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username"),
+    @NamedQuery(name = "GascatUsuario.findByRol", query = "SELECT g FROM GascatUsuario g WHERE g.codigoTiporol.codigoTiporol = :rol"),    
     @NamedQuery(name = "GascatUsuario.findByLogin", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.pwd = :pass"),
     @NamedQuery(name = "GascatUsuario.findByUsuarioEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.gasEstacion = :gasEstacion and g.estado = 'A' "),
     @NamedQuery(name = "GascatUsuario.findByLoginEstacion", query = "SELECT g FROM GascatUsuario g WHERE g.gascatUsuarioPK.username = :username and g.pwd = :pass and g.gasEstacion = :gasEstacion and g.estado = 'A' "),

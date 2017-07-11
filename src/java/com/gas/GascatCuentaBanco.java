@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "GascatCuentaBanco.findAll", query = "SELECT g FROM GascatCuentaBanco g"),
     @NamedQuery(name = "GascatCuentaBanco.findByCodigoBanco", query = "SELECT g FROM GascatCuentaBanco g WHERE g.gascatCuentaBancoPK.codigoBanco = :codigoBanco"),
+    
     @NamedQuery(name = "GascatCuentaBanco.findByNoCuenta", query = "SELECT g FROM GascatCuentaBanco g WHERE g.gascatCuentaBancoPK.noCuenta = :noCuenta"),
     @NamedQuery(name = "GascatCuentaBanco.findByTipoCuenta", query = "SELECT g FROM GascatCuentaBanco g WHERE g.tipoCuenta = :tipoCuenta"),
     @NamedQuery(name = "GascatCuentaBanco.findBySaldo", query = "SELECT g FROM GascatCuentaBanco g WHERE g.saldo = :saldo"),

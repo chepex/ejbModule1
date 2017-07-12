@@ -46,7 +46,9 @@ public class GasPrepagoFacade extends AbstractFacade<GasPrepago> {
             System.out.println("erorr--->"+ex);
         }
         return q.getResultList();
-    }   
+    } 
+    
+      
     
     public List<GasPrepago> findByNumero( BigInteger numero) {
         TypedQuery<GasPrepago> q = null;

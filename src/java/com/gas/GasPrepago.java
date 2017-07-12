@@ -141,7 +141,12 @@ public class GasPrepago implements Serializable {
         @JoinColumn(name = "CODIGO_CLIENTE", referencedColumnName = "CODIGO_CLIENTE", insertable = false, updatable = false)})
     @ManyToOne(optional = false)
     private GasCliente gasCliente;    
-  
+    @JoinColumns({
+        @JoinColumn(name = "CODIGO_EMPRESA", referencedColumnName = "CODIGO_EMPRESA", insertable = false, updatable = false),
+        @JoinColumn(name = "CODIGO_ESTACION", referencedColumnName = "CODIGO_ESTACION", insertable = false, updatable = false),
+        @JoinColumn(name = "USERNAME_CREADO", referencedColumnName = "USERNAME", insertable = false, updatable = false)})
+    @ManyToOne(optional = false)
+    private GascatUsuario gascatUsuario;   
     @JoinColumns({
         @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID_CLIENTE", insertable = false, updatable = false) })
     @ManyToOne(optional = false)
@@ -160,6 +165,16 @@ public class GasPrepago implements Serializable {
     public GasPrepago() {
     }
 
+    public GascatUsuario getGascatUsuario() {
+        return gascatUsuario;
+    }
+
+    public void setGascatUsuario(GascatUsuario gascatUsuario) {
+        this.gascatUsuario = gascatUsuario;
+    }
+
+    
+    
     public String getImpreso() {
         return impreso;
     }

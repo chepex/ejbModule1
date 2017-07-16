@@ -108,6 +108,8 @@ public class GasPrepago implements Serializable {
     private String impreso;        
     @Column(name = "NUM_FACTURA")    
     private String numFactura;       
+    @Column(name = "NUM_CHEQUE")    
+    private String numCheque;        
     @Column(name = "FECHA_INICIO")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaInicio;    
@@ -178,6 +180,16 @@ public class GasPrepago implements Serializable {
     public String getImpreso() {
         return impreso;
     }
+
+    public String getNumCheque() {
+        return numCheque;
+    }
+
+    public void setNumCheque(String numCheque) {
+        this.numCheque = numCheque;
+    }
+    
+    
 
     public void setImpreso(String impreso) {
         this.impreso = impreso;
